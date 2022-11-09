@@ -11,7 +11,7 @@ routes.get("/fetchAllnotes",Fetchuser,async(req,res)=>{
 
         
     
-      const newnote = await Notes.find({});
+      const newnote = await Notes.find({user: req.user.id});
 
       res.send(newnote)
         
